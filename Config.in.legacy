@@ -146,6 +146,22 @@ endif
 
 comment "Legacy options removed in 2021.08"
 
+config BR2_TARGET_GRUB2_BUILTIN_MODULES
+	bool "the grub2 builtin modules has been renamed"
+	select BR2_LEGACY
+	help
+	  This option has been split to separate the builtin modules
+	  between BR2_TARGET_GRUB2_BUILTIN_MODULES_PC and
+	  BR2_TARGET_GRUB2_BUILTIN_MODULES_EFI.
+
+config BR2_TARGET_GRUB2_BUILTIN_CONFIG
+	bool "the grub2 builtin configuration has been renamed"
+	select BR2_LEGACY
+	help
+	  This option has been split to separate the builtin configuration
+	  between BR2_TARGET_GRUB2_BUILTIN_CONFIG_PC and
+	  BR2_TARGET_GRUB2_BUILTIN_CONFIG_EFI.
+
 config BR2_PACKAGE_LIBMCRYPT
 	bool "libmcrypt package was removed"
 	select BR2_LEGACY
