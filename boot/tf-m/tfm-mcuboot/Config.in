@@ -1,0 +1,12 @@
+config BR2_TARGET_TFM_MCUBOOT
+	bool
+
+config BR2_TARGET_TFM_MCUBOOT_GIT_REPO_URL
+	string "URL of mcuboot git repository" \
+		if !BR2_TARGET_TF_M_LATEST_VERSION
+	default "https://github.com/mcu-tools/mcuboot.git"
+
+config BR2_TARGET_TFM_MCUBOOT_GIT_REPO_VERSION
+	string "mcuboot repository version" \
+		if !BR2_TARGET_TF_M_LATEST_VERSION
+	default "9c99326b9756dbcc35b524636d99ed5f3e6cb29b"
