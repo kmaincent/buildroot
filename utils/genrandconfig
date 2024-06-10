@@ -371,6 +371,9 @@ async def fixup_config(sysinfo, configfile):
         configlines.remove('BR2_TARGET_S500_BOOTLOADER=y\n')
         configlines.remove('BR2_TARGET_S500_BOOTLOADER_BOARD=""\n')
 
+    if 'BR2_TARGET_TF_M=y\n' in configlines:
+        configlines.append('BR2_TARGET_TF_M_PLATFORM="arm/mps2/an521"\n')
+
     if 'BR2_TARGET_TI_K3_R5_LOADER=y\n' in configlines and \
        'BR2_TARGET_TI_K3_R5_LOADER_USE_DEFCONFIG=y\n' in configlines and \
        'BR2_TARGET_TI_K3_R5_LOADER_BOARD_DEFCONFIG=""\n' in configlines:
