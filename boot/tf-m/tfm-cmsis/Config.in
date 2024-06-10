@@ -1,0 +1,12 @@
+config BR2_TARGET_TFM_CMSIS
+	bool
+
+config BR2_TARGET_TFM_CMSIS_GIT_REPO_URL
+	string "URL of cmsis git repository" \
+		if !BR2_TARGET_TF_M_LATEST_VERSION
+	default "https://github.com/ARM-software/CMSIS_6.git"
+
+config BR2_TARGET_TFM_CMSIS_GIT_REPO_VERSION
+	string "cmsis repository version" \
+		if !BR2_TARGET_TF_M_LATEST_VERSION
+	default "d0c460c1697d210b49a4b90998195831c0cd325c"
