@@ -230,6 +230,11 @@ UBOOT_IMX_FW_FILES = \
 	$(if $(BR2_PACKAGE_FIRMWARE_IMX_DDR4),ddr4*.bin) \
 	$(if $(BR2_PACKAGE_FIRMWARE_IMX_DDR3),ddr3*.bin)
 
+ifeq ($(BR2_PACKAGE_FIRMWARE_ELE_IMX),y)
+UBOOT_DEPENDENCIES += firmware-ele-imx
+UBOOT_IMX_FW_FILES += *-ahab-container.img
+endif
+
 define UBOOT_COPY_IMX_FW_FILES
 	$(foreach fw,$(UBOOT_IMX_FW_FILES),\
 		cp $(BINARIES_DIR)/$(fw) $(@D)/
